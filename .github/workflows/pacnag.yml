@@ -1,0 +1,12 @@
+name: Run Pac-Nag Test
+on: workflow_dispatch
+jobs:
+  pacnag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          token: ${{secrets.TOKEN}}
+          discord_webhook: ${{secrets.DISCORD_WEBHOOK_URL}}
+          pacsheetslink: ${{secrets.PAC_SHEETS_LINK}}
